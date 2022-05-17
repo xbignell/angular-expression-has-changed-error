@@ -1,5 +1,5 @@
 import { AfterViewInit, Component } from '@angular/core';
-import { Subscription } from 'rxjs';
+import { of } from 'rxjs';
 import { SecondExampleProblemService } from '../second-example-problem.service';
 
 @Component({
@@ -8,23 +8,13 @@ import { SecondExampleProblemService } from '../second-example-problem.service';
   styleUrls: ['./second-example-solution.component.css'],
 })
 export class SecondExampleSolutionComponent implements AfterViewInit {
-  public status = true;
-
-  private subscription = new Subscription();
+  public status$ = of(true);
 
   constructor(
     private secondExampleProblemService: SecondExampleProblemService
   ) {}
 
   ngAfterViewInit() {
-    this.subscription.add(
-      this.secondExampleProblemService.observable$.subscribe((status) => {
-        this.status = status;
-      })
-    );
-  }
-
-  ngOnDestroy() {
-    this.subscription.unsubscribe();
+    this.status$ = this.secondExampleProblemService.observable$;
   }
 }

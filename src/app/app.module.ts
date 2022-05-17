@@ -8,6 +8,7 @@ import { FirstExampleSolutionComponent } from './first-example-solution/first-ex
 import { SecondExampleProblemComponent } from './second-example-problem/second-example-problem.component';
 import { CommonModule } from '@angular/common';
 import { SecondExampleSolutionComponent } from './second-example-solution/second-example-solution.component';
+import { SecondExampleChildrenComponent } from './second-example-problem/second-example-children/second-example-children.component';
 
 @NgModule({
   imports: [BrowserModule, FormsModule, CommonModule],
@@ -17,6 +18,7 @@ import { SecondExampleSolutionComponent } from './second-example-solution/second
     FirstExampleSolutionComponent,
     SecondExampleProblemComponent,
     SecondExampleSolutionComponent,
+    SecondExampleChildrenComponent,
   ],
   bootstrap: [AppComponent],
 })
