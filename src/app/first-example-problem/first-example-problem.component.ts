@@ -5,12 +5,8 @@ import { AfterViewInit, Component, OnInit } from '@angular/core';
   templateUrl: './first-example-problem.component.html',
   styleUrls: ['./first-example-problem.component.css'],
 })
-export class FirstExampleProblemComponent implements OnInit, AfterViewInit {
-  public statusChange: boolean;
-
-  ngOnInit() {
-    this.statusChange = true;
-  }
+export class FirstExampleProblemComponent implements AfterViewInit {
+  public statusChange = true;
 
   ngAfterViewInit() {
     this.statusChange = false;

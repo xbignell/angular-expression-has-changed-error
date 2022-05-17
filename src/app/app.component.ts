@@ -8,6 +8,7 @@ import { Component, VERSION } from '@angular/core';
 export class AppComponent {
   public firstExampleProblem = false;
   public firstExampleSolution = false;
+  public firstExampleSolution2 = false;
 
   public secondExampleProblem = false;
   public secondExampleSolution = false;
@@ -18,6 +19,10 @@ export class AppComponent {
 
   public showFirstExampleSolution() {
     this.firstExampleSolution = !this.firstExampleSolution;
+  }
+
+  public showFirstExampleSolution2() {
+    this.firstExampleSolution2 = !this.firstExampleSolution2;
   }
 
   public showSecondExampleProblem() {
