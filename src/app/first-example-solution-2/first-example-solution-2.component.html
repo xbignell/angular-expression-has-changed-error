@@ -1,1 +1,2 @@
-<p *ngIf="!statusChange">PROVOKED</p>
+<p *ngIf="loading$ | async; else loaded"><app-spinner></app-spinner></p>
+<ng-template #loaded> LOADED </ng-template>

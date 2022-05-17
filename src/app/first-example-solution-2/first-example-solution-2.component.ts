@@ -1,5 +1,5 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, delay } from 'rxjs';
 
 @Component({
   selector: 'app-first-example-solution-2',
@@ -7,9 +7,10 @@ import { BehaviorSubject } from 'rxjs';
   styleUrls: ['./first-example-solution-2.component.css'],
 })
 export class FirstExampleSolution2Component implements AfterViewInit {
-  public statusChange = new BehaviorSubject(true);
+  public loading = new BehaviorSubject(true);
+  public loading$ = this.loading.asObservable().pipe(delay(0));
 
   ngAfterViewInit() {
-    this.statusChange.next(false);
+    this.loading.next(false);
   }
 }

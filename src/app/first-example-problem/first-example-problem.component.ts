@@ -6,9 +6,9 @@ import { AfterViewInit, Component, OnInit } from '@angular/core';
   styleUrls: ['./first-example-problem.component.css'],
 })
 export class FirstExampleProblemComponent implements AfterViewInit {
-  public statusChange = true;
+  public loading = true;
 
   ngAfterViewInit() {
-    this.statusChange = false;
+    this.loading = false;
   }
 }
