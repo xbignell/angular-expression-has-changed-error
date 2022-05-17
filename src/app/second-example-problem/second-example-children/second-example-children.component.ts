@@ -6,9 +6,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./second-example-children.component.css'],
 })
 export class SecondExampleChildrenComponent {
-  @Input() car: { id: number; model: string };
-
-  public changeModel() {
-    this.car.model = 'Renault';
+  @Input() set car(car: { id: number; model: string }) {
+    car.model = 'Renault';
   }
 }
