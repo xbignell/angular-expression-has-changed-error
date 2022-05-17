@@ -1,0 +1,40 @@
+<div class="container">
+  <p class="title">NG0100: Expression has changed after it was checked</p>
+  <p class="description">
+    Angular throws an ExpressionChangedAfterItHasBeenCheckedError when an
+    expression value has been changed after change detection has completed.
+    <br />
+    <b>Angular only throws this error in development mode.</b>
+  </p>
+  <div class="examples">
+    <h3>Example 1</h3>
+    <button class="example-button" (click)="showFirstExampleProblem()">
+      Show problem
+    </button>
+    <app-first-example-problem
+      *ngIf="firstExampleProblem"
+    ></app-first-example-problem>
+
+    <button class="example-button" (click)="showFirstExampleSolution()">
+      Show solution
+    </button>
+    <app-first-example-solution
+      *ngIf="firstExampleSolution"
+    ></app-first-example-solution>
+
+    <h3>Example 2</h3>
+    <button class="example-button" (click)="showSecondExampleProblem()">
+      Show Problem
+    </button>
+    <app-second-example-problem
+      *ngIf="secondExampleProblem"
+    ></app-second-example-problem>
+
+    <button class="example-button" (click)="showSecondExampleSolution()">
+      Show solution
+    </button>
+    <app-second-example-solution
+      *ngIf="secondExampleSolution"
+    ></app-second-example-solution>
+  </div>
+</div>
