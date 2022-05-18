@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { FirstExampleProblemComponent } from './first-example-problem/first-example-problem.component';
@@ -11,7 +11,7 @@ import { SpinnerComponent } from './spinner/spinner.component';
 import { SecondExampleProblemComponent } from './second-example-problem/second-example-problem.component';
 
 @NgModule({
-  imports: [BrowserModule, FormsModule, CommonModule],
+  imports: [BrowserModule, FormsModule, CommonModule, ReactiveFormsModule],
   declarations: [
     AppComponent,
     FirstExampleProblemComponent,
