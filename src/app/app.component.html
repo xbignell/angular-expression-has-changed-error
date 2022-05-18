@@ -10,6 +10,7 @@
     <h3>TEORICAL SOLUTIONS</h3>
     Moving the initialization of the data to ngOnInit()
     <h3>PRACTICAL SOLUTIONS</h3>
+    <h4>First problem</h4>
     <button class="example-button" (click)="showFirstExampleProblem()">
       Show problem
     </button>
@@ -30,8 +31,19 @@
     <app-first-example-solution-2
       *ngIf="firstExampleSolution2"
     ></app-first-example-solution-2>
+    <h4>Second problem</h4>
+    <button class="example-button" (click)="showSecondExampleProblem()">
+      Show problem
+    </button>
+    <app-second-example-problem
+      *ngIf="secondExampleProblem"
+    ></app-second-example-problem>
 
-    <app-second-example-problem></app-second-example-problem>
-    <app-second-example-solution></app-second-example-solution>
+    <button class="example-button" (click)="showSecondExampleSolution()">
+      Show solution
+    </button>
+    <app-second-example-solution
+      *ngIf="secondExampleSolution"
+    ></app-second-example-solution>
   </div>
 </div>

@@ -1,5 +1,4 @@
-import { ChangeDetectorRef, Component } from '@angular/core';
-import { tap } from 'rxjs';
+import { Component } from '@angular/core';
 import { CarService } from '../car.service';
 
 @Component({
