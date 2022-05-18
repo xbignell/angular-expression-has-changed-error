@@ -10,7 +10,7 @@ import {
   of,
   shareReplay,
   switchMap,
-tap,
+  tap,
 } from 'rxjs';
 
 @Component({
@@ -38,7 +38,7 @@ export class SecondExampleProblemComponent implements OnInit {
     return this.formControlValue$.pipe(
       tap(console.log),
       switchMap((value) =>
-        iif(() => !!value, of('OK'), of(null).pipe(delay(300)))
+        iif(() => !!value && value == 'OK', of('OK'), of(null))
       ),
       catchError(() => of(null)),
       shareReplay(1)
