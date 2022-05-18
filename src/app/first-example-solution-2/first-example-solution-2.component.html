@@ -1,2 +1,2 @@
-<p *ngIf="loading$ | async; else loaded"><app-spinner></app-spinner></p>
+<div *ngIf="loading$ | async; else loaded"><app-spinner></app-spinner></div>
 <ng-template #loaded> LOADED </ng-template>

@@ -1,5 +1,5 @@
-import { ChangeDetectorRef, Component } from '@angular/core';
-import { delay, tap } from 'rxjs';
+import { Component } from '@angular/core';
+import { delay } from 'rxjs';
 import { CarService } from '../car.service';
 
 @Component({

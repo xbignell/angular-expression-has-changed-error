@@ -9,8 +9,4 @@ export class CarService {
   public changeModel(model: string): void {
     this.carModel.next(model);
   }
-
-  public getModel(): Observable<string> {
-    return this.carModel.asObservable();
-  }
 }
