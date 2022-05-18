@@ -12,6 +12,7 @@ import {
   switchMap,
   tap,
 } from 'rxjs';
+import { startWith } from 'rxjs/operators';
 import { InputService } from '../input.service';
 
 @Component({
@@ -24,24 +25,23 @@ export class SecondExampleProblemComponent implements OnInit {
   private formControlValue$ = this.getFormControlValue();
   public value$ = this.getValue();
 
-  constructor(private inputService: InputService) {}
-
-  ngOnInit() {
-    this.inputService.changeValue('Testing');
+  public ngOnInit() {
+    this.formControl.setValue('First value');
   }
+
+  constructor(private inputService: InputService) {}
 
   private getFormControlValue(): Observable<string> {
     return this.formControl.valueChanges.pipe(
       distinctUntilChanged(),
-      debounceTime(500)
+      debounceTime(100)
     );
   }
 
   private getValue(): Observable<string> {
     return this.formControlValue$.pipe(
-      tap(console.log),
       switchMap((value) =>
-        iif(() => !!value && value == 'OK', this.inputService.value$, of(null))
+        iif(() => !!value, this.inputService.value$, of(null))
       ),
       catchError(() => of(null)),
       shareReplay(1)

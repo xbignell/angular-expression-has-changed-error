@@ -6,5 +6,5 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./second-example-problem-children.component.css'],
 })
 export class SecondExampleProblemChildrenComponent {
-  @Input() value: string;
+  @Input() public value: string;
 }

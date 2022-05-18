@@ -5,7 +5,7 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root',
 })
 export class InputService {
-  private value = new BehaviorSubject('First step');
+  private value = new BehaviorSubject('First input');
   public value$ = this.value.asObservable();
 
   public changeValue(value: string): void {
