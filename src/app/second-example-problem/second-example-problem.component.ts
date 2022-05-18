@@ -1,17 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
-import {
-  catchError,
-  debounceTime,
-  delay,
-  distinctUntilChanged,
-  iif,
-  Observable,
-  of,
-  shareReplay,
-  switchMap,
-  tap,
-} from 'rxjs';
 import { CarService } from '../car.service';
 
 @Component({
@@ -21,6 +8,5 @@ import { CarService } from '../car.service';
 })
 export class SecondExampleProblemComponent {
   public isValid$ = this.carService.isCarValid();
-
   constructor(private carService: CarService) {}
 }

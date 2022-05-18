@@ -32,7 +32,7 @@ export class CarService {
   public isCarValid(): Observable<boolean> {
     const [valid$, notValid$] = partition(
       this.getCar(),
-      (elements) => !!Object.keys(elements).length
+      (elements) => !!Object.values(elements).filter((value) => !!value).length
     );
 
     return merge(valid$.pipe(mapTo(true)), notValid$.pipe(mapTo(false)));
