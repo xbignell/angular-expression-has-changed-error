@@ -13,36 +13,14 @@ import { Car } from './config/car.config';
   providedIn: 'root',
 })
 export class CarService {
-  public carModel = new BehaviorSubject<string>('');
-  public carName = new BehaviorSubject<string>('');
-  public carRegisterDate = new BehaviorSubject<Date>(null);
+  private carModel = new BehaviorSubject<string>('');
+  public carModel$ = this.carModel.asObservable();
 
   public changeModel(model: string): void {
     this.carModel.next(model);
   }
 
-  public changeName(name: string): void {
-    this.carName.next(name);
-  }
-
-  public changeRegisterDate(date: Date): void {
-    this.carRegisterDate.next(date);
-  }
-
-  public isCarValid(): Observable<boolean> {
-    const [valid$, notValid$] = partition(
-      this.getCar(),
-      (elements) => !!Object.values(elements).filter((value) => !!value).length
-    );
-
-    return merge(valid$.pipe(mapTo(true)), notValid$.pipe(mapTo(false)));
-  }
-
-  public getCar(): Observable<Car> {
-    return combineLatest({
-      model: this.carModel,
-      name: this.carName,
-      registerDate: this.carRegisterDate,
-    });
+  public getModel(): Observable<string> {
+    return this.carModel.asObservable();
   }
 }

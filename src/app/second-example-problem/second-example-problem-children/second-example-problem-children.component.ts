@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
 import { CarService } from '../../car.service';
 
 @Component({
@@ -11,7 +11,5 @@ export class SecondExampleProblemChildrenComponent implements OnInit {
 
   public ngOnInit() {
     this.carService.changeModel('Renault');
-    this.carService.changeName('Megane');
-    this.carService.changeRegisterDate(new Date());
   }
 }

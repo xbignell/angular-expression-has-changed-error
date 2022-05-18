@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { delay, tap } from 'rxjs';
 import { CarService } from '../car.service';
 
 @Component({
@@ -7,6 +8,10 @@ import { CarService } from '../car.service';
   styleUrls: ['./second-example-problem.component.css'],
 })
 export class SecondExampleProblemComponent {
-  public isValid$ = this.carService.isCarValid();
-  constructor(private carService: CarService) {}
+  public model$ = this.carService.carModel$;
+
+  constructor(
+    private carService: CarService,
+    private changeDetector: ChangeDetectorRef
+  ) {}
 }
