@@ -1,9 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, mapTo } from 'rxjs';
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class SecondExampleProblemService {
   private observable = new BehaviorSubject(false);
   public observable$ = this.observable.asObservable();
