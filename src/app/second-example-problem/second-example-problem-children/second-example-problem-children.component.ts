@@ -10,6 +10,8 @@ export class SecondExampleProblemChildrenComponent implements OnInit {
   constructor(private carService: CarService) {}
 
   public ngOnInit() {
-    this.carService.changeValue('Testing');
+    this.carService.changeModel('Renault');
+    this.carService.changeName('Megane');
+    this.carService.changeRegisterDate(new Date());
   }
 }

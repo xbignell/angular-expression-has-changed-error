@@ -19,14 +19,8 @@ import { CarService } from '../car.service';
   templateUrl: './second-example-problem.component.html',
   styleUrls: ['./second-example-problem.component.css'],
 })
-export class SecondExampleProblemComponent implements OnInit {
+export class SecondExampleProblemComponent {
   public isValid$ = this.carService.isCarValid();
 
   constructor(private carService: CarService) {}
-
-  public ngOnInit() {
-    this.carService.changeValue('Parent');
-  }
-
-  private isValid(): Observable<boolean> {}
 }
