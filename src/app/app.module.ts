@@ -10,6 +10,8 @@ import { CommonModule } from '@angular/common';
 import { SpinnerComponent } from './spinner/spinner.component';
 import { SecondExampleProblemComponent } from './second-example-problem/second-example-problem.component';
 import { SecondExampleProblemChildrenComponent } from './second-example-problem/second-example-problem-children/second-example-problem-children.component';
+import { SecondExampleSolutionComponent } from './second-example-solution/second-example-solution.component';
+import { SecondExampleSolutionChildrenComponent } from './second-example-solution/second-example-solution-children/second-example-solution-children.component';
 
 @NgModule({
   imports: [BrowserModule, FormsModule, CommonModule, ReactiveFormsModule],
@@ -20,7 +22,9 @@ import { SecondExampleProblemChildrenComponent } from './second-example-problem/
     FirstExampleSolution2Component,
     SpinnerComponent,
     SecondExampleProblemComponent,
-    SecondExampleProblemChildrenComponent
+    SecondExampleProblemChildrenComponent,
+    SecondExampleSolutionComponent,
+    SecondExampleSolutionChildrenComponent,
   ],
   bootstrap: [AppComponent],
 })
