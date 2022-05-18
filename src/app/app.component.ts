@@ -12,6 +12,7 @@ export class AppComponent {
 
   public secondExampleProblem = false;
   public secondExampleSolution = false;
+  public secondExampleSolution2 = false;
 
   public showFirstExampleProblem() {
     this.firstExampleProblem = !this.firstExampleProblem;
@@ -31,5 +32,9 @@ export class AppComponent {
 
   public showSecondExampleSolution() {
     this.secondExampleSolution = !this.secondExampleSolution;
+  }
+
+  public showSecondExampleSolution2() {
+    this.secondExampleSolution2 = !this.secondExampleSolution2;
   }
 }

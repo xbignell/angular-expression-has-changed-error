@@ -45,5 +45,12 @@
     <app-second-example-solution
       *ngIf="secondExampleSolution"
     ></app-second-example-solution>
+
+    <button class="example-button" (click)="showSecondExampleSolution2()">
+      Show solution 2
+    </button>
+    <app-second-example-solution-2
+      *ngIf="secondExampleSolution2"
+    ></app-second-example-solution-2>
   </div>
 </div>
