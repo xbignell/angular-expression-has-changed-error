@@ -1,3 +1,2 @@
-<app-second-example-problem-children
-  *ngIf="isValid$ | async"
-></app-second-example-problem-children>
+<h1 *ngIf="isValid$ | async as isValid">The children is valid</h1>
+<app-second-example-problem-children></app-second-example-problem-children>
