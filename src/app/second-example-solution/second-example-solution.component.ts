@@ -1,5 +1,5 @@
-import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
-import { tap } from 'rxjs';
+import { Component } from '@angular/core';
+import { delay } from 'rxjs';
 import { CarService } from '../car.service';
 
 @Component({
@@ -8,11 +8,7 @@ import { CarService } from '../car.service';
   styleUrls: ['./second-example-solution.component.css'],
 })
 export class SecondExampleSolutionComponent {
-  public model$ = this.carService.carModel$.pipe(
-    tap(() => this.changeDetector.detectChanges())
-  );
-  constructor(
-    private carService: CarService,
-    private changeDetector: ChangeDetectorRef
-  ) {}
+  public model$ = this.carService.carModel$.pipe(delay(0));
+
+  constructor(private carService: CarService) {}
 }

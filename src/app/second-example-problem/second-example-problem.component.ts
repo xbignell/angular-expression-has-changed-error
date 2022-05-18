@@ -8,11 +8,6 @@ import { CarService } from '../car.service';
   styleUrls: ['./second-example-problem.component.css'],
 })
 export class SecondExampleProblemComponent {
-  public model$ = this.carService.carModel$.pipe(
-    tap(() => this.changeDetector.detectChanges())
-  );
-  constructor(
-    private carService: CarService,
-    private changeDetector: ChangeDetectorRef
-  ) {}
+  public model$ = this.carService.carModel$;
+  constructor(private carService: CarService) {}
 }
