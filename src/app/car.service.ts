@@ -1,13 +1,5 @@
 import { Injectable } from '@angular/core';
-import {
-  BehaviorSubject,
-  Observable,
-  combineLatest,
-  partition,
-  merge,
-} from 'rxjs';
-import { mapTo } from 'rxjs/operators';
-import { Car } from './config/car.config';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
